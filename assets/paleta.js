@@ -3,9 +3,9 @@
 //   ?tono=14,72,55     → aplica ese tono (matiz, saturación, luz) sin mostrar el panel
 // Borrar este archivo y su <script> en index.html cuando el color quede definido.
 (function () {
-  var ORIGINAL = { h: 14, s: 87, l: 55 };
+  var ORIGINAL = { h: 13, s: 86, l: 56 };
   var PRESETS = [
-    { name: 'Original', h: 14, s: 87, l: 55 },
+    { name: 'Original', h: 13, s: 86, l: 56 },
     { name: 'Suave', h: 14, s: 72, l: 55 },
     { name: 'Mandarina', h: 20, s: 74, l: 56 },
     { name: 'Coral', h: 9, s: 66, l: 58 },
