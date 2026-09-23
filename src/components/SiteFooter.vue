@@ -71,7 +71,7 @@ const year = new Date().getFullYear()
 .brand p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--gris); max-width: 240px; }
 .col { display: flex; flex-direction: column; gap: 14px; }
 .col-links { display: flex; flex-direction: column; gap: 8px; }
-.col-links a { font-size: 15px; color: var(--tinta); line-height: 1.5; }
+.col-links a { font-size: 15px; color: var(--tinta); line-height: 1.5; overflow-wrap: anywhere; }
 .col-links a:hover { color: var(--naranja); }
 .social { display: flex; flex-wrap: wrap; gap: 10px; }
 .social a {
@@ -99,5 +99,12 @@ const year = new Date().getFullYear()
   color: var(--gris);
 }
 .bottom a { color: var(--gris); text-decoration: underline; text-underline-offset: 3px; }
+
+/* En pantallas táctiles los enlaces necesitan más área para el dedo. */
+@media (pointer: coarse) {
+  .col-links { gap: 0; }
+  .col-links a, .bottom a { padding: 10px 0; }
+  .bottom { gap: 0 28px; }
+}
 .bottom a:hover { color: var(--naranja); }
 </style>

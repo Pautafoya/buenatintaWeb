@@ -46,7 +46,7 @@ const toggle = i => { open.value = open.value === i ? -1 : i }
   color: var(--naranja);
 }
 .side p { margin: 22px 0 0; font-size: 16px; line-height: 1.6; max-width: 380px; }
-.side a { font-weight: 600; color: var(--naranja); }
+.side a { font-weight: 600; color: var(--naranja); padding: 10px 0; }
 .side a:hover { color: var(--naranja-osc); }
 
 .list { display: flex; flex-direction: column; gap: 12px; }

@@ -40,6 +40,10 @@ import { PASOS, SHAPES } from '../data/contenido'
 }
 .tentacle { right: -2%; top: 0; width: clamp(170px, 24vw, 340px); transform: scaleX(-1); }
 .tentacle img { width: 100%; display: block; transform-origin: 0 0; }
+/* En móvil el tentáculo queda detrás del título: más chico y tenue para no restar legibilidad. */
+@media (max-width: 640px) {
+  .tentacle { width: 120px; top: -10px; opacity: .45; }
+}
 .heading { color: var(--naranja); max-width: 900px; }
 .inline-logo { display: inline-flex; align-items: center; vertical-align: middle; }
 .inline-logo img { height: .72em; display: block; }
