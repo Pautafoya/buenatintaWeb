@@ -6,6 +6,11 @@
 <meta name="robots" content="noindex, nofollow">
 <title>La Buena Tinta · Taller creativo</title>
 <link rel="icon" href="assets/logo-emblema.svg" type="image/svg+xml">
+<style>
+:root{--naranja:#F0592B;--naranja-osc:#B5431F;--naranja-medio:#D3582E;--naranja-claro:#FFA24C;--filtro-naranja:none}
+img[src*="fondo-ondas"],img[src*="tentaculo-naranja"]{filter:var(--filtro-naranja)}
+</style>
+<script src="assets/paleta.js" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -18,7 +23,7 @@
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/coolvetica">
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#F0592B;color:#fff;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--naranja);color:#fff;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 *{box-sizing:border-box}
 a{color:#fff;text-decoration:none}
 a:hover{color:#FFE3C4}
@@ -35,16 +40,16 @@ input,textarea,button{font-family:inherit}
     <a href="#inicio" style="display:flex;align-items:center"><img src="assets/logo-horizontal.svg" alt="La Buena Tinta" style="height:26px;display:block"></a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;align-items:center;gap:clamp(14px,2vw,30px);font-size:14px;font-weight:500">
-        <a href="#servicios" style="color:#2C2E35" style-hover="color:#F0592B">Servicios</a>
-        <a href="#nosotros" style="color:#2C2E35" style-hover="color:#F0592B">Nosotros</a>
-        <a href="#proyectos" style="color:#2C2E35" style-hover="color:#F0592B">Proyectos</a>
-        <a href="#clientes" style="color:#2C2E35" style-hover="color:#F0592B">Clientes</a>
-        <a href="#faq" style="color:#2C2E35" style-hover="color:#F0592B">FAQ</a>
-        <a href="#contacto" style="background:#F0592B;color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s" style-hover="background:#2C2E35;color:#fff;transform:rotate(-3deg) scale(1.05)">Pide presupuesto</a>
+        <a href="#servicios" style="color:#2C2E35" style-hover="color:var(--naranja)">Servicios</a>
+        <a href="#nosotros" style="color:#2C2E35" style-hover="color:var(--naranja)">Nosotros</a>
+        <a href="#proyectos" style="color:#2C2E35" style-hover="color:var(--naranja)">Proyectos</a>
+        <a href="#clientes" style="color:#2C2E35" style-hover="color:var(--naranja)">Clientes</a>
+        <a href="#faq" style="color:#2C2E35" style-hover="color:var(--naranja)">FAQ</a>
+        <a href="#contacto" style="background:var(--naranja);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s" style-hover="background:#2C2E35;color:#fff;transform:rotate(-3deg) scale(1.05)">Pide presupuesto</a>
       </div>
     </sc-if>
     <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-      <button onClick="{{ toggleMenu }}" aria-label="Menú" style="width:44px;height:44px;border-radius:999px;border:0;background:#F0592B;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" style="width:44px;height:44px;border-radius:999px;border:0;background:var(--naranja);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
         <span style="width:18px;height:2px;background:#fff;border-radius:2px"></span>
         <span style="width:18px;height:2px;background:#fff;border-radius:2px"></span>
       </button>
@@ -53,11 +58,11 @@ input,textarea,button{font-family:inherit}
 </header>
 
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;inset:0;z-index:70;background:#F0592B;color:#fff;display:flex;flex-direction:column;padding:24px clamp(20px,6vw,48px);overflow:hidden">
+  <div style="position:fixed;inset:0;z-index:70;background:var(--naranja);color:#fff;display:flex;flex-direction:column;padding:24px clamp(20px,6vw,48px);overflow:hidden">
     <img src="assets/tentaculo-blanco.svg" alt="" style="position:absolute;right:-40px;bottom:-30px;width:60%;max-width:300px;opacity:.35;transform:scaleX(-1) rotate(180deg);pointer-events:none">
     <div style="display:flex;justify-content:space-between;align-items:center;position:relative">
       <img src="assets/logo-emblema.svg" alt="" style="height:44px;filter:brightness(0) invert(1)">
-      <button onClick="{{ toggleMenu }}" aria-label="Cerrar" style="width:44px;height:44px;border-radius:999px;border:0;background:#fff;color:#F0592B;font-size:22px;cursor:pointer">×</button>
+      <button onClick="{{ toggleMenu }}" aria-label="Cerrar" style="width:44px;height:44px;border-radius:999px;border:0;background:#fff;color:var(--naranja);font-size:22px;cursor:pointer">×</button>
     </div>
     <div style="display:flex;flex-direction:column;gap:6px;margin-top:48px;font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(44px,12vw,72px);line-height:1.05;position:relative">
       <sc-for list="{{ menuLinks }}" as="l" hint-placeholder-count="6">
@@ -68,12 +73,12 @@ input,textarea,button{font-family:inherit}
   </div>
 </sc-if>
 
-<section id="inicio" data-screen-label="01 Inicio" style="position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(150px,22vh,220px) clamp(20px,4vw,48px) clamp(80px,10vh,120px);background:#F0592B">
+<section id="inicio" data-screen-label="01 Inicio" style="position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(150px,22vh,220px) clamp(20px,4vw,48px) clamp(80px,10vh,120px);background:var(--naranja)">
   <div data-par data-speed="0.25" style="position:absolute;inset:-6%;pointer-events:none">
     <img data-drift src="assets/fondo-ondas-3.svg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
   </div>
-  <div data-blob data-par data-speed="-0.12" style="position:absolute;width:clamp(260px,34vw,520px);aspect-ratio:1/1;right:-8%;bottom:-14%;background:linear-gradient(135deg,#F0592B 10%,#FFA24C 60%,#FFE3C4 100%);border-radius:58% 42% 63% 37%/45% 55% 45% 55%;opacity:.9;pointer-events:none"></div>
-  <div data-blob data-par data-speed="0.18" style="position:absolute;width:clamp(140px,16vw,240px);aspect-ratio:1/1;left:12%;bottom:8%;background:linear-gradient(200deg,#FFA24C,#F0592B);border-radius:42% 58% 37% 63%/55% 45% 55% 45%;opacity:.85;pointer-events:none"></div>
+  <div data-blob data-par data-speed="-0.12" style="position:absolute;width:clamp(260px,34vw,520px);aspect-ratio:1/1;right:-8%;bottom:-14%;background:linear-gradient(135deg,var(--naranja) 10%,var(--naranja-claro) 60%,#FFE3C4 100%);border-radius:58% 42% 63% 37%/45% 55% 45% 55%;opacity:.9;pointer-events:none"></div>
+  <div data-blob data-par data-speed="0.18" style="position:absolute;width:clamp(140px,16vw,240px);aspect-ratio:1/1;left:12%;bottom:8%;background:linear-gradient(200deg,var(--naranja-claro),var(--naranja));border-radius:42% 58% 37% 63%/55% 45% 55% 45%;opacity:.85;pointer-events:none"></div>
   <div style="position:absolute;left:0;top:0;width:clamp(90px,13vw,220px);pointer-events:none;opacity:.55">
     <img data-sway src="assets/tentaculo-blanco.svg" alt="" style="width:100%;display:block;transform-origin:0 0">
   </div>
@@ -89,14 +94,14 @@ input,textarea,button{font-family:inherit}
       <span style="display:inline-block;overflow:hidden;padding-bottom:.08em"><span data-word style="display:inline-block">poderosas.</span></span>
     </h1>
     <div data-fade style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px">
-      <a href="#contacto" style="background:#fff;color:#F0592B;padding:17px 30px;border-radius:999px;font-weight:600;font-size:16px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 14px 34px -14px rgba(90,20,0,.6);transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .2s,color .2s" style-hover="background:#2C2E35;color:#fff;transform:translateY(-3px) rotate(-2deg)">Pide tu presupuesto <span>→</span></a>
-      <a href="#proyectos" style="color:#fff;padding:17px 30px;border-radius:999px;font-weight:600;font-size:16px;border:2px solid #fff;transition:all .2s" style-hover="background:#fff;color:#F0592B">Ver proyectos</a>
+      <a href="#contacto" style="background:#fff;color:var(--naranja);padding:17px 30px;border-radius:999px;font-weight:600;font-size:16px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 14px 34px -14px rgba(90,20,0,.6);transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .2s,color .2s" style-hover="background:#2C2E35;color:#fff;transform:translateY(-3px) rotate(-2deg)">Pide tu presupuesto <span>→</span></a>
+      <a href="#proyectos" style="color:#fff;padding:17px 30px;border-radius:999px;font-weight:600;font-size:16px;border:2px solid #fff;transition:all .2s" style-hover="background:#fff;color:var(--naranja)">Ver proyectos</a>
     </div>
   </div>
   
 </section>
 
-<section id="servicios" data-screen-label="02 Servicios" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:#F0592B;padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
+<section id="servicios" data-screen-label="02 Servicios" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:var(--naranja);padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
   <div data-par data-speed="-0.06" style="position:absolute;left:0;right:0;bottom:-10%;height:70%;pointer-events:none;opacity:.9">
     <img src="assets/fondo-ondas-3.svg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:0 100%;display:block">
   </div>
@@ -123,7 +128,7 @@ input,textarea,button{font-family:inherit}
             <div style="overflow:hidden">
               <div style="padding:0 0 24px 58px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
                 <p style="margin:0;font-size:16px;line-height:1.7;font-weight:500;text-wrap:pretty">{{ sv.desc }}</p>
-                <button onClick="{{ sv.ask }}" style="background:{{ sv.btnBg }};color:#D3582E;border:0;box-shadow:0 10px 24px -12px rgba(90,20,0,.6);padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:rotate(-2deg) scale(1.05)">Cotizar este servicio →</button>
+                <button onClick="{{ sv.ask }}" style="background:{{ sv.btnBg }};color:var(--naranja-medio);border:0;box-shadow:0 10px 24px -12px rgba(90,20,0,.6);padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:rotate(-2deg) scale(1.05)">Cotizar este servicio →</button>
               </div>
             </div>
           </div>
@@ -134,7 +139,7 @@ input,textarea,button{font-family:inherit}
 </section>
 
 <sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
-  <div style="position:relative;z-index:3;background:#fff;color:#F0592B;transform:rotate(-2deg);margin:-24px -20px 0;box-shadow:0 20px 40px -24px rgba(90,20,0,.5);padding:18px 0;overflow:hidden">
+  <div style="position:relative;z-index:3;background:#fff;color:var(--naranja);transform:rotate(-2deg);margin:-24px -20px 0;box-shadow:0 20px 40px -24px rgba(90,20,0,.5);padding:18px 0;overflow:hidden">
     <div data-marquee style="display:flex;width:max-content;gap:40px;align-items:center;font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(28px,3.4vw,46px);white-space:nowrap">
       <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="12">
         <span style="display:flex;align-items:center;gap:40px">{{ m }}<img src="assets/logo-emblema.svg" alt="" style="height:.9em"></span>
@@ -148,7 +153,7 @@ input,textarea,button{font-family:inherit}
     <img data-sway src="assets/tentaculo-naranja.svg" alt="" style="width:100%;display:block;transform-origin:0 0">
   </div>
   <div style="position:relative;max-width:1280px;margin:0 auto">
-    <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,6.6vw,104px);line-height:.9;margin:0;color:#F0592B;max-width:900px">¿Por qué elegir <span style="display:inline-flex;align-items:center;vertical-align:middle"><img src="assets/logo-horizontal.svg" alt="La Buena Tinta" style="height:.72em;display:block"></span>?</h2>
+    <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,6.6vw,104px);line-height:.9;margin:0;color:var(--naranja);max-width:900px">¿Por qué elegir <span style="display:inline-flex;align-items:center;vertical-align:middle"><img src="assets/logo-horizontal.svg" alt="La Buena Tinta" style="height:.72em;display:block"></span>?</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,80px);margin-top:clamp(36px,5vw,60px)">
       <p data-reveal style="margin:0;font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(26px,2.8vw,40px);line-height:1.1;color:#2C2E35;text-wrap:balance">No solo diseñamos: creamos experiencias de marca que conectan y generan impacto.</p>
       <p data-reveal data-delay="120" style="margin:0;font-size:clamp(16px,1.25vw,18px);line-height:1.75;text-wrap:pretty">Ofrecemos soluciones estratégicas y creativas que garantizan coherencia y diferenciación. Llevamos la identidad visual al siguiente nivel con la instalación de vinilos, murales y otros elementos gráficos en espacios físicos, para que tu marca se viva en cada detalle.</p>
@@ -156,11 +161,11 @@ input,textarea,button{font-family:inherit}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(18px,2vw,28px);margin-top:clamp(56px,7vw,96px)">
       <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
         <div data-reveal data-delay="{{ s.delay }}" style="display:flex;flex-direction:column;gap:18px">
-          <div data-blob style="overflow:hidden;aspect-ratio:1/1;border-radius:{{ s.shape }};box-shadow:0 30px 50px -30px rgba(240,89,43,.7);transition:transform .5s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.04) rotate(-3deg)">
+          <div data-blob style="overflow:hidden;aspect-ratio:1/1;border-radius:{{ s.shape }};box-shadow:0 30px 50px -30px color-mix(in srgb,var(--naranja) 70%,transparent);transition:transform .5s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.04) rotate(-3deg)">
             <img src="{{ s.img }}" alt="{{ s.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div style="display:flex;align-items:baseline;gap:14px">
-            <span style="font-family:'Coolvetica','Poppins',sans-serif;font-size:22px;color:#F0592B">{{ s.n }}</span>
+            <span style="font-family:'Coolvetica','Poppins',sans-serif;font-size:22px;color:var(--naranja)">{{ s.n }}</span>
             <span style="font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(32px,3vw,44px);color:#2C2E35">{{ s.title }}</span>
           </div>
           <p style="margin:0;font-size:15px;line-height:1.65">{{ s.text }}</p>
@@ -171,13 +176,13 @@ input,textarea,button{font-family:inherit}
 </section>
 
 <section id="proyectos" data-screen-label="04 Proyectos" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:#FFF6EC;color:#2C2E35;padding:0 clamp(20px,4vw,48px) clamp(80px,10vw,140px)">
-  <div data-blob style="position:absolute;width:clamp(300px,40vw,620px);aspect-ratio:1/1;left:-14%;top:18%;background:linear-gradient(135deg,#FFE3C4,#FFA24C 55%,#F0592B);border-radius:42% 58% 37% 63%/55% 45% 55% 45%;opacity:.55;pointer-events:none"></div>
+  <div data-blob style="position:absolute;width:clamp(300px,40vw,620px);aspect-ratio:1/1;left:-14%;top:18%;background:linear-gradient(135deg,#FFE3C4,var(--naranja-claro) 55%,var(--naranja));border-radius:42% 58% 37% 63%/55% 45% 55% 45%;opacity:.55;pointer-events:none"></div>
   <div style="position:relative;max-width:1280px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-      <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,6.6vw,104px);line-height:.9;margin:0;color:#F0592B">Render. Impresión.<br>Instalación.</h2>
+      <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,6.6vw,104px);line-height:.9;margin:0;color:var(--naranja)">Render. Impresión.<br>Instalación.</h2>
       <p data-reveal data-delay="100" style="margin:0;max-width:360px;font-size:16px;line-height:1.6">Así llevamos la marca de Clínica de la Vista del render a la calle.</p>
     </div>
-    <div data-reveal style="margin-top:clamp(36px,5vw,56px);background:#F0592B;color:#fff;border-radius:40px;padding:clamp(18px,2.6vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,44px);position:relative;overflow:hidden">
+    <div data-reveal style="margin-top:clamp(36px,5vw,56px);background:var(--naranja);color:#fff;border-radius:40px;padding:clamp(18px,2.6vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,44px);position:relative;overflow:hidden">
       <img src="assets/fondo-ondas-3.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;pointer-events:none">
       <div style="position:relative;display:flex;flex-direction:column;gap:18px;padding:clamp(4px,1vw,14px)">
         <div style="font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase">Caso destacado</div>
@@ -207,7 +212,7 @@ input,textarea,button{font-family:inherit}
             <img src="assets/img/antes-1.jpg" alt="Antes" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none">
             <img src="assets/img/despues-2.jpg" alt="Después" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;clip-path:inset(0 0 0 {{ splitPct }})">
             <div style="position:absolute;top:0;bottom:0;left:{{ splitPct }};width:3px;margin-left:-1.5px;background:#fff;pointer-events:none">
-              <div style="position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#fff;color:#F0592B;display:flex;align-items:center;justify-content:center;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.3)">↔</div>
+              <div style="position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#fff;color:var(--naranja);display:flex;align-items:center;justify-content:center;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.3)">↔</div>
             </div>
             <span style="position:absolute;left:14px;top:14px;background:#fff;color:#2C2E35;font-size:12px;font-weight:600;letter-spacing:.1em;padding:6px 12px;border-radius:999px;pointer-events:none">ANTES</span>
             <span style="position:absolute;right:14px;top:14px;background:#2C2E35;color:#fff;font-size:12px;font-weight:600;letter-spacing:.1em;padding:6px 12px;border-radius:999px;pointer-events:none">DESPUÉS</span>
@@ -219,11 +224,11 @@ input,textarea,button{font-family:inherit}
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(20px,2.4vw,36px);margin-top:clamp(56px,7vw,96px)">
       <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="9">
         <button data-reveal data-delay="{{ g.delay }}" onClick="{{ g.open }}" style="display:flex;flex-direction:column;gap:14px;width:100%;padding:0;border:0;background:none;color:#2C2E35;cursor:zoom-in;text-align:left">
-          <div data-blob style="overflow:hidden;aspect-ratio:1/1;border-radius:{{ g.shape }};box-shadow:0 30px 50px -34px rgba(240,89,43,.8)">
+          <div data-blob style="overflow:hidden;aspect-ratio:1/1;border-radius:{{ g.shape }};box-shadow:0 30px 50px -34px color-mix(in srgb,var(--naranja) 80%,transparent)">
             <img src="{{ g.src }}" alt="{{ g.cap }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.08)">
           </div>
           <div style="display:flex;flex-direction:column;gap:4px;padding:0 4px">
-            <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#B5431F">{{ g.tag }}</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-osc)">{{ g.tag }}</span>
             <span style="font-family:'Coolvetica','Poppins',sans-serif;font-size:24px;line-height:1.1;color:#2C2E35">{{ g.title }}</span>
           </div>
         </button>
@@ -233,16 +238,16 @@ input,textarea,button{font-family:inherit}
 </section>
 
 <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
-  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:80;background:rgba(240,89,43,.97);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px)">
+  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:80;background:color-mix(in srgb,var(--naranja) 97%,transparent);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px)">
     {{ lbImg }}
     <div style="position:absolute;left:0;right:0;bottom:22px;text-align:center;color:#fff;font-size:15px;font-weight:600">{{ lb.cap }}</div>
-    <button onClick="{{ lbPrev }}" aria-label="Anterior" style="position:absolute;left:clamp(8px,2vw,28px);top:50%;margin-top:-26px;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:#F0592B;font-size:22px;cursor:pointer">←</button>
-    <button onClick="{{ lbNext }}" aria-label="Siguiente" style="position:absolute;right:clamp(8px,2vw,28px);top:50%;margin-top:-26px;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:#F0592B;font-size:22px;cursor:pointer">→</button>
+    <button onClick="{{ lbPrev }}" aria-label="Anterior" style="position:absolute;left:clamp(8px,2vw,28px);top:50%;margin-top:-26px;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:var(--naranja);font-size:22px;cursor:pointer">←</button>
+    <button onClick="{{ lbNext }}" aria-label="Siguiente" style="position:absolute;right:clamp(8px,2vw,28px);top:50%;margin-top:-26px;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:var(--naranja);font-size:22px;cursor:pointer">→</button>
     <button onClick="{{ lbClose }}" aria-label="Cerrar" style="position:absolute;right:clamp(8px,2vw,28px);top:clamp(8px,2vw,28px);width:48px;height:48px;border-radius:50%;border:0;background:#2C2E35;color:#fff;font-size:22px;cursor:pointer">×</button>
   </div>
 </sc-if>
 
-<section id="clientes" data-screen-label="05 Clientes" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:#F0592B;padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
+<section id="clientes" data-screen-label="05 Clientes" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:var(--naranja);padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
   <div data-par data-speed="0.08" style="position:absolute;inset:-25% 0;pointer-events:none">
     <img src="assets/fondo-ondas-3.svg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)">
   </div>
@@ -250,7 +255,7 @@ input,textarea,button{font-family:inherit}
     <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,6.6vw,104px);line-height:.9;margin:0">Marcas que ya<br>llevan tinta.</h2>
     <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:40px">
       <sc-for list="{{ clients }}" as="c" hint-placeholder-count="3">
-        <div data-reveal data-delay="{{ c.delay }}" style="background:#fff;color:#F0592B;border-radius:999px;padding:14px 26px;font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(20px,2vw,28px);transform:rotate({{ c.rot }});transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:rotate(0deg) scale(1.06)">{{ c.name }}</div>
+        <div data-reveal data-delay="{{ c.delay }}" style="background:#fff;color:var(--naranja);border-radius:999px;padding:14px 26px;font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(20px,2vw,28px);transform:rotate({{ c.rot }});transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:rotate(0deg) scale(1.06)">{{ c.name }}</div>
       </sc-for>
     </div>
     <div data-reveal style="margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:minmax(0,1fr);background:#fff;color:#2C2E35;border-radius:40px;padding:clamp(28px,4vw,60px);position:relative;overflow:hidden">
@@ -258,7 +263,7 @@ input,textarea,button{font-family:inherit}
       <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="1">
         <figure style="grid-area:1/1;margin:0;opacity:{{ q.op }};transform:translateY({{ q.y }});transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1);pointer-events:{{ q.pe }}">
           <blockquote style="margin:0;font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(26px,3.2vw,46px);line-height:1.12;max-width:900px;color:#2C2E35;text-wrap:pretty">“{{ q.text }}”</blockquote>
-          <figcaption style="margin-top:26px;font-size:15px"><strong style="color:#F0592B">{{ q.who }}</strong> · {{ q.role }}</figcaption>
+          <figcaption style="margin-top:26px;font-size:15px"><strong style="color:var(--naranja)">{{ q.who }}</strong> · {{ q.role }}</figcaption>
         </figure>
       </sc-for>
       <div style="display:flex;gap:10px;margin-top:30px;position:relative">
@@ -273,8 +278,8 @@ input,textarea,button{font-family:inherit}
 <section id="faq" data-screen-label="06 FAQ" style="scroll-margin-top:80px;background:#FFF6EC;color:#2C2E35;padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
   <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,80px);align-items:start">
     <div style="position:sticky;top:120px">
-      <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,5.8vw,90px);line-height:.9;margin:0;color:#F0592B">Preguntas frecuentes</h2>
-      <p data-reveal style="margin:22px 0 0;font-size:16px;line-height:1.6;max-width:380px">¿No encuentras tu respuesta? <a href="#contacto" style="font-weight:600;color:#F0592B">Escríbenos</a>.</p>
+      <h2 data-reveal style="font-family:'Coolvetica','Poppins',sans-serif;font-weight:700;font-size:clamp(46px,5.8vw,90px);line-height:.9;margin:0;color:var(--naranja)">Preguntas frecuentes</h2>
+      <p data-reveal style="margin:22px 0 0;font-size:16px;line-height:1.6;max-width:380px">¿No encuentras tu respuesta? <a href="#contacto" style="font-weight:600;color:var(--naranja)">Escríbenos</a>.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
@@ -292,7 +297,7 @@ input,textarea,button{font-family:inherit}
   </div>
 </section>
 
-<section id="contacto" data-screen-label="07 Contacto" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:#F0592B;padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
+<section id="contacto" data-screen-label="07 Contacto" style="scroll-margin-top:80px;position:relative;overflow:hidden;background:var(--naranja);padding:clamp(80px,10vw,140px) clamp(20px,4vw,48px)">
   <div data-par data-speed="-0.05" style="position:absolute;inset:-22% 0 -12%;pointer-events:none">
     <img src="assets/fondo-ondas-3.svg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
   </div>
@@ -308,31 +313,31 @@ input,textarea,button{font-family:inherit}
     <div data-reveal data-delay="120" style="background:#fff;color:#2C2E35;border-radius:36px;padding:clamp(24px,3vw,40px);box-shadow:0 40px 80px -40px rgba(90,20,0,.6)">
       <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
         <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px">
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:#B5431F">Nombre
-            <input value="{{ form.nombre }}" onChange="{{ setNombre }}" placeholder="Tu nombre" style="border:2px solid {{ errNombre }};border-radius:16px;padding:14px 16px;font-size:16px;outline:none;background:#FFF6EC;color:#2C2E35" style-focus="border-color:#F0592B">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:var(--naranja-osc)">Nombre
+            <input value="{{ form.nombre }}" onChange="{{ setNombre }}" placeholder="Tu nombre" style="border:2px solid {{ errNombre }};border-radius:16px;padding:14px 16px;font-size:16px;outline:none;background:#FFF6EC;color:#2C2E35" style-focus="border-color:var(--naranja)">
           </label>
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:#B5431F">Email o teléfono
-            <input value="{{ form.contacto }}" onChange="{{ setContacto }}" placeholder="¿Cómo te contactamos?" style="border:2px solid {{ errContacto }};border-radius:16px;padding:14px 16px;font-size:16px;outline:none;background:#FFF6EC;color:#2C2E35" style-focus="border-color:#F0592B">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:var(--naranja-osc)">Email o teléfono
+            <input value="{{ form.contacto }}" onChange="{{ setContacto }}" placeholder="¿Cómo te contactamos?" style="border:2px solid {{ errContacto }};border-radius:16px;padding:14px 16px;font-size:16px;outline:none;background:#FFF6EC;color:#2C2E35" style-focus="border-color:var(--naranja)">
           </label>
-          <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;font-weight:600;color:#B5431F">¿Qué necesitas?
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;font-weight:600;color:var(--naranja-osc)">¿Qué necesitas?
             <div style="display:flex;flex-wrap:wrap;gap:8px">
               <sc-for list="{{ chips }}" as="ch" hint-placeholder-count="6">
-                <button type="button" onClick="{{ ch.toggle }}" style="border:2px solid #F0592B;background:{{ ch.bg }};color:{{ ch.ink }};padding:9px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;transform:scale({{ ch.sc }})">{{ ch.label }}</button>
+                <button type="button" onClick="{{ ch.toggle }}" style="border:2px solid var(--naranja);background:{{ ch.bg }};color:{{ ch.ink }};padding:9px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;transform:scale({{ ch.sc }})">{{ ch.label }}</button>
               </sc-for>
             </div>
           </div>
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:#B5431F">Mensaje
-            <textarea value="{{ form.mensaje }}" onChange="{{ setMensaje }}" rows="4" placeholder="Cuéntanos sobre tu proyecto" style="border:2px solid rgba(240,89,43,.2);border-radius:16px;padding:14px 16px;font-size:16px;outline:none;resize:vertical;background:#FFF6EC;color:#2C2E35" style-focus="border-color:#F0592B"></textarea>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:var(--naranja-osc)">Mensaje
+            <textarea value="{{ form.mensaje }}" onChange="{{ setMensaje }}" rows="4" placeholder="Cuéntanos sobre tu proyecto" style="border:2px solid color-mix(in srgb,var(--naranja) 20%,transparent);border-radius:16px;padding:14px 16px;font-size:16px;outline:none;resize:vertical;background:#FFF6EC;color:#2C2E35" style-focus="border-color:var(--naranja)"></textarea>
           </label>
-          <button type="submit" style="background:#F0592B;color:#fff;border:0;padding:18px 24px;border-radius:999px;font-weight:600;font-size:16px;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .2s" style-hover="background:#2C2E35;transform:translateY(-2px) rotate(-1deg)">Enviar solicitud →</button>
+          <button type="submit" style="background:var(--naranja);color:#fff;border:0;padding:18px 24px;border-radius:999px;font-weight:600;font-size:16px;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .2s" style-hover="background:#2C2E35;transform:translateY(-2px) rotate(-1deg)">Enviar solicitud →</button>
         </form>
       </sc-if>
       <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:40px 10px">
           <img data-bounce src="assets/logo-emblema.svg" alt="" style="width:110px">
-          <h3 style="font-family:'Coolvetica','Poppins',sans-serif;font-size:40px;margin:0;color:#F0592B">¡Recibido, {{ firstName }}!</h3>
+          <h3 style="font-family:'Coolvetica','Poppins',sans-serif;font-size:40px;margin:0;color:var(--naranja)">¡Recibido, {{ firstName }}!</h3>
           <p style="margin:0;font-size:16px;line-height:1.6;max-width:340px">Te responderemos muy pronto con los siguientes pasos.</p>
-          <button onClick="{{ reset }}" style="margin-top:8px;background:none;border:2px solid #F0592B;color:#F0592B;padding:12px 20px;border-radius:999px;font-weight:600;cursor:pointer">Enviar otra solicitud</button>
+          <button onClick="{{ reset }}" style="margin-top:8px;background:none;border:2px solid var(--naranja);color:var(--naranja);padding:12px 20px;border-radius:999px;font-weight:600;cursor:pointer">Enviar otra solicitud</button>
         </div>
       </sc-if>
     </div>
@@ -346,42 +351,42 @@ input,textarea,button{font-family:inherit}
       <p style="margin:0;font-size:14px;line-height:1.6;color:#6B6D75;max-width:240px">Identidad visual: render, impresión e instalación.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B5431F">Navegación</div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--naranja-osc)">Navegación</div>
       <div style="display:flex;flex-direction:column;gap:8px">
-        <a href="#servicios" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">Servicios</a>
-        <a href="#nosotros" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">Nosotros</a>
-        <a href="#proyectos" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">Proyectos</a>
-        <a href="#faq" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">Preguntas frecuentes</a>
-        <a href="#contacto" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">Contacto</a>
+        <a href="#servicios" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">Servicios</a>
+        <a href="#nosotros" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">Nosotros</a>
+        <a href="#proyectos" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">Proyectos</a>
+        <a href="#faq" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">Preguntas frecuentes</a>
+        <a href="#contacto" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">Contacto</a>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B5431F">Contacto</div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--naranja-osc)">Contacto</div>
       <div style="display:flex;flex-direction:column;gap:8px">
-        <a href="mailto:pamela@labuenatinta.com" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">pamela@labuenatinta.com</a>
-        <a href="tel:+525525754314" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">55 2575 4314</a>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Circuito+Ingenieros+39+Loc+C-4+Ciudad+Sat%C3%A9lite+53100" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:#F0592B">Circuito Ingenieros 39, Loc. C-4<br>Cd. Satélite, 53100, Edo. de México</a>
+        <a href="mailto:pamela@labuenatinta.com" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">pamela@labuenatinta.com</a>
+        <a href="tel:+525525754314" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">55 2575 4314</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Circuito+Ingenieros+39+Loc+C-4+Ciudad+Sat%C3%A9lite+53100" style="font-size:15px;color:#2C2E35;line-height:1.5" style-hover="color:var(--naranja)">Circuito Ingenieros 39, Loc. C-4<br>Cd. Satélite, 53100, Edo. de México</a>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B5431F">Síguenos</div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--naranja-osc)">Síguenos</div>
       <div style="display:flex;flex-wrap:wrap;gap:10px">
-        <a href="https://instagram.com/" aria-label="Instagram" style="width:44px;height:44px;border-radius:50%;background:#F0592B;display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></a>
-        <a href="https://facebook.com/" aria-label="Facebook" style="width:44px;height:44px;border-radius:50%;background:#F0592B;display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"></path></svg></a>
-        <a href="https://tiktok.com/" aria-label="TikTok" style="width:44px;height:44px;border-radius:50%;background:#F0592B;display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"></path></svg></a>
-        <a href="https://linkedin.com/" aria-label="LinkedIn" style="width:44px;height:44px;border-radius:50%;background:#F0592B;display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff"><path d="M6.9 8.9H3.6V20h3.3V8.9zM5.3 3.6a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.6c0-3-1.6-4.9-4.2-4.9-1.3 0-2.3.7-2.8 1.5V8.9h-3.2V20h3.3v-5.8c0-1.5.6-2.5 1.9-2.5 1.3 0 1.8 1 1.8 2.5V20h3.3v-6.4z"></path></svg></a>
+        <a href="https://instagram.com/" aria-label="Instagram" style="width:44px;height:44px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></a>
+        <a href="https://facebook.com/" aria-label="Facebook" style="width:44px;height:44px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"></path></svg></a>
+        <a href="https://tiktok.com/" aria-label="TikTok" style="width:44px;height:44px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"></path></svg></a>
+        <a href="https://linkedin.com/" aria-label="LinkedIn" style="width:44px;height:44px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.12) rotate(-8deg)"><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff"><path d="M6.9 8.9H3.6V20h3.3V8.9zM5.3 3.6a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.6c0-3-1.6-4.9-4.2-4.9-1.3 0-2.3.7-2.8 1.5V8.9h-3.2V20h3.3v-5.8c0-1.5.6-2.5 1.9-2.5 1.3 0 1.8 1 1.8 2.5V20h3.3v-6.4z"></path></svg></a>
       </div>
     </div>
   </div>
-  <div style="max-width:1280px;margin:clamp(40px,5vw,64px) auto 0;padding-top:22px;border-top:1px solid rgba(240,89,43,.25);display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:12px 28px;font-size:13px;color:#6B6D75;padding-right:84px">
+  <div style="max-width:1280px;margin:clamp(40px,5vw,64px) auto 0;padding-top:22px;border-top:1px solid color-mix(in srgb,var(--naranja) 25%,transparent);display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:12px 28px;font-size:13px;color:#6B6D75;padding-right:84px">
     <span>© 2026 La Buena Tinta · Taller creativo</span>
-    <a href="#aviso-privacidad" onClick="{{ openPriv }}" style="color:#6B6D75;text-decoration:underline;text-underline-offset:3px" style-hover="color:#F0592B">Aviso de privacidad</a>
+    <a href="#aviso-privacidad" onClick="{{ openPriv }}" style="color:#6B6D75;text-decoration:underline;text-underline-offset:3px" style-hover="color:var(--naranja)">Aviso de privacidad</a>
   </div>
   <sc-if value="{{ privOpen }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ closePriv }}" style="position:fixed;inset:0;z-index:90;background:rgba(44,46,53,.6);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px)">
       <div onClick="{{ stop }}" style="background:#fff;color:#2C2E35;border-radius:32px;max-width:720px;width:100%;max-height:84vh;overflow:auto;padding:clamp(24px,4vw,48px);position:relative">
-        <button onClick="{{ closePriv }}" aria-label="Cerrar" style="position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;border:0;background:#F0592B;color:#fff;font-size:22px;cursor:pointer">×</button>
-        <h3 style="font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(30px,3.4vw,44px);margin:0 50px 0 0;color:#F0592B">Aviso de privacidad</h3>
+        <button onClick="{{ closePriv }}" aria-label="Cerrar" style="position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--naranja);color:#fff;font-size:22px;cursor:pointer">×</button>
+        <h3 style="font-family:'Coolvetica','Poppins',sans-serif;font-size:clamp(30px,3.4vw,44px);margin:0 50px 0 0;color:var(--naranja)">Aviso de privacidad</h3>
         <div style="display:flex;flex-direction:column;gap:14px;margin-top:22px;font-size:15px;line-height:1.7">
           <p style="margin:0">La Buena Tinta, con domicilio en Circuito Ingenieros 39, Loc. C-4, Cd. Satélite, 53100, Estado de México, es responsable del uso y protección de sus datos personales.</p>
           <p style="margin:0"><strong>Datos que recabamos:</strong> nombre, correo electrónico, teléfono y la información que nos comparta sobre su proyecto a través del formulario de contacto.</p>
@@ -561,7 +566,7 @@ class Component extends DCLogic {
           ask: () => { this.setState(st => ({ picked: st.picked.includes(sv.name) ? st.picked : [...st.picked, sv.name] })); this.goTo('contacto'); }
         };
       }),
-      tabs: ['Render', 'Instalación', 'Antes / Después'].map((label, i) => ({ label, bg: s.tab === i ? '#fff' : 'transparent', ink: s.tab === i ? '#F0592B' : '#fff', select: () => this.setState({ tab: i }) })),
+      tabs: ['Render', 'Instalación', 'Antes / Después'].map((label, i) => ({ label, bg: s.tab === i ? '#fff' : 'transparent', ink: s.tab === i ? 'var(--naranja)' : '#fff', select: () => this.setState({ tab: i }) })),
       tabRender: s.tab === 0, tabInst: s.tab === 1, tabBA: s.tab === 2,
       splitPct: s.split + '%',
       baDown: (e) => { this.drag = true; e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId); this.baSet(e); },
@@ -575,7 +580,7 @@ class Component extends DCLogic {
       lbNext: (e) => { e.stopPropagation(); this.step(1); },
       clients: ['Clínica de la Vista', 'Congreso Córnea', 'Museo de béisbol'].map((name, i) => ({ name, rot: [-3, 2, -1.5][i] + 'deg', delay: i * 90 })),
       quotes: this.QUOTES.map((q, i) => ({ ...q, op: s.t === i ? 1 : 0, y: s.t === i ? '0px' : '20px', pe: s.t === i ? 'auto' : 'none' })),
-      quoteDots: this.QUOTES.map((_, i) => ({ w: s.t === i ? '34px' : '10px', bg: s.t === i ? '#F0592B' : 'rgba(240,89,43,.25)', go: () => this.setState({ t: i }) })),
+      quoteDots: this.QUOTES.map((_, i) => ({ w: s.t === i ? '34px' : '10px', bg: s.t === i ? 'var(--naranja)' : 'color-mix(in srgb,var(--naranja) 25%,transparent)', go: () => this.setState({ t: i }) })),
       faqs: [
         ['¿Trabajan solo con marcas nuevas?', 'No. Creamos identidades desde cero, pero también renovamos marcas existentes y aplicamos identidades ya definidas en nuevos soportes.'],
         ['¿Se encargan de la impresión y la instalación?', 'Sí. Hacemos render, impresión e instalación con nuestro propio equipo, así cuidamos la calidad de principio a fin.'],
@@ -585,13 +590,13 @@ class Component extends DCLogic {
         ['¿Cómo pido un presupuesto?', 'Llena el formulario de contacto o escríbenos por WhatsApp. Te respondemos con una propuesta a la medida.']
       ].map(([q, a], i) => {
         const open = s.faq === i;
-        return { q, a, rows: open ? '1fr' : '0fr', rot: open ? '45deg' : '0deg', bg: open ? '#F0592B' : '#fff', ink: open ? '#fff' : '#2C2E35', iconBg: open ? '#fff' : '#F0592B', iconInk: open ? '#F0592B' : '#fff', toggle: () => this.setState(st => ({ faq: st.faq === i ? -1 : i })) };
+        return { q, a, rows: open ? '1fr' : '0fr', rot: open ? '45deg' : '0deg', bg: open ? 'var(--naranja)' : '#fff', ink: open ? '#fff' : '#2C2E35', iconBg: open ? '#fff' : 'var(--naranja)', iconInk: open ? 'var(--naranja)' : '#fff', toggle: () => this.setState(st => ({ faq: st.faq === i ? -1 : i })) };
       }),
       form: s.form,
       setNombre: setF('nombre'), setContacto: setF('contacto'), setMensaje: setF('mensaje'),
-      errNombre: s.tried && !s.form.nombre.trim() ? '#F0592B' : 'rgba(240,89,43,.2)',
-      errContacto: s.tried && !s.form.contacto.trim() ? '#F0592B' : 'rgba(240,89,43,.2)',
-      chips: this.SERVICES.map(sv => { const on = s.picked.includes(sv.name); return { label: sv.name, bg: on ? '#F0592B' : '#fff', ink: on ? '#fff' : '#B5431F', sc: on ? 1.04 : 1, toggle: () => togglePick(sv.name) }; }),
+      errNombre: s.tried && !s.form.nombre.trim() ? 'var(--naranja)' : 'color-mix(in srgb,var(--naranja) 20%,transparent)',
+      errContacto: s.tried && !s.form.contacto.trim() ? 'var(--naranja)' : 'color-mix(in srgb,var(--naranja) 20%,transparent)',
+      chips: this.SERVICES.map(sv => { const on = s.picked.includes(sv.name); return { label: sv.name, bg: on ? 'var(--naranja)' : '#fff', ink: on ? '#fff' : 'var(--naranja-osc)', sc: on ? 1.04 : 1, toggle: () => togglePick(sv.name) }; }),
       submit: (e) => { e.preventDefault(); if (!s.form.nombre.trim() || !s.form.contacto.trim()) { this.setState({ tried: true }); return; } this.setState({ sent: true, tried: false }); },
       sent: s.sent, notSent: !s.sent,
       firstName: (s.form.nombre.trim().split(' ')[0]) || '',
